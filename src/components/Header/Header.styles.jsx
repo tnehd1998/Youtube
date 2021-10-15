@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
@@ -20,7 +21,9 @@ export const Icon = styled.i`
   cursor: pointer;
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
+  text-decoration: none;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;

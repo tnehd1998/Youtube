@@ -17,7 +17,7 @@ const Header = () => {
     <HeaderContainer>
       <CategoryContainer>
         <Icon className="fas fa-bars"></Icon>
-        <LogoContainer>
+        <LogoContainer to="/">
           <LogoImage src="/images/logo.png" alt="Youtube Logo" />
           <LogoTitle>YouTube</LogoTitle>
         </LogoContainer>
