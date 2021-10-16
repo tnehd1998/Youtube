@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const SideMenuItemContainer = styled.li`
+  width: 12rem;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -9,7 +10,7 @@ const SideMenuItemContainer = styled.li`
   font-size: 14px;
   color: #606060;
   background-color: ${(props) => (props.clicked ? "#e5e5e5" : "white")};
-  padding-left: 1.2vw;
+  padding-left: 1.5rem;
   text-align: center;
 
   &:hover {

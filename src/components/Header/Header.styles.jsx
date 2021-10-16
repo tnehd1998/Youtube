@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
+  width: 97vw;
   height: 6vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
   padding: 0 1.5rem;
+  position: fixed;
+  background-color: white;
 `;
 
 export const CategoryContainer = styled.div`

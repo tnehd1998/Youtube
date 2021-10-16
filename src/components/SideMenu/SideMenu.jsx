@@ -3,7 +3,10 @@ import styled from "styled-components";
 import SideMenuItem from "../SideMenuItem/SideMenuItem";
 
 const SideMenuContainer = styled.div`
+  width: 15rem;
   height: 94vh;
+  position: fixed;
+  background-color: white;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
