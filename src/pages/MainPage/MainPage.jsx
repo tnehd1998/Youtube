@@ -14,7 +14,7 @@ const MainPage = () => {
     youtube
       .mostPopular() //
       .then((videos) => setVideos(videos));
-  }, [youtube]);
+  }, []);
 
   return (
     <MainPageContainer>
