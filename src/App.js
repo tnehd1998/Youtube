@@ -11,6 +11,7 @@ import styled from "styled-components";
 
 import Header from "./components/Header/Header";
 import MainPage from "./pages/MainPage/MainPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 const AppFormat = styled.div`
   font-family: "Noto Sans KR", sans-serif;
@@ -22,6 +23,7 @@ const App = () => (
       <Header />
       <Switch>
         <Route exact path="/" component={MainPage} />
+        <Route exact path="/search/:id" component={SearchPage} />
         <Redirect from="*" to="/" />
       </Switch>
     </AppFormat>

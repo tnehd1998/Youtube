@@ -2,7 +2,7 @@ import React from "react";
 import VideoItem from "../VideoItem/VideoItem";
 import styled from "styled-components";
 
-const MainVideoListContainer = styled.ul`
+const VideoListContainer = styled.ul`
   display: flex;
   list-style: none;
   justify-content: center;
@@ -12,14 +12,14 @@ const MainVideoListContainer = styled.ul`
   background-color: #f9f9f9;
 `;
 
-const MainVideoList = ({ videos }) => {
+const VideoList = ({ videos }) => {
   return (
-    <MainVideoListContainer>
+    <VideoListContainer>
       {videos.map((video) => (
         <VideoItem key={video.id} video={video} />
       ))}
-    </MainVideoListContainer>
+    </VideoListContainer>
   );
 };
 
-export default MainVideoList;
+export default VideoList;

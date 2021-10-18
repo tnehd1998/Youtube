@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MainVideoList from "../../components/MainVideoList/MainVideoList";
+import VideoList from "../../components/VideoList/VideoList";
 import SideMenu from "../../components/SideMenu/SideMenu";
 import Youtube from "../../service/youtube";
 
@@ -19,7 +19,7 @@ const MainPage = () => {
   return (
     <MainPageContainer>
       <SideMenu />
-      <MainVideoList videos={videos} />
+      <VideoList videos={videos} />
     </MainPageContainer>
   );
 };

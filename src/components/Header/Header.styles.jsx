@@ -55,13 +55,14 @@ export const SearchBar = styled.input`
   padding-left: 0.5rem;
 `;
 
-export const SearchButton = styled.button`
+export const SearchButton = styled(Link)`
   all: unset;
   width: 3vw;
   height: 4vh;
   background-color: #f0f0f0;
   text-align: center;
   border: 1px solid #c6c6c6;
+  line-height: 4vh;
 `;
 
 export const MicIconContainer = styled.div`

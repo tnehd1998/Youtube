@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   HeaderContainer,
   CategoryContainer,
@@ -13,6 +13,30 @@ import {
 } from "./Header.styles";
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const inputRef = useRef();
+
+  const handleSearch = () => {
+    const value = inputRef.current.value;
+    console.log("Value: " + value);
+    console.log("Before: " + searchInput);
+    setSearchInput(value);
+    console.log("After: " + searchInput);
+  };
+
+  const onClick = () => {
+    handleSearch();
+  };
+
+  const onKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  // useState Sync하게 바꿔야함
+
   return (
     <HeaderContainer>
       <CategoryContainer>
@@ -23,9 +47,14 @@ const Header = () => {
         </LogoContainer>
       </CategoryContainer>
       <CategoryContainer>
-        <SearchBar type="text" placeholder="검색" />
-        <SearchButton type="submit">
-          <Icon className="fas fa-search"></Icon>
+        <SearchBar
+          type="text"
+          placeholder="검색"
+          ref={inputRef}
+          onKeyPress={onKeyPress}
+        />
+        <SearchButton to={`/search/${searchInput}`}>
+          <Icon className="fas fa-search" onClick={onClick}></Icon>
         </SearchButton>
         <MicIconContainer>
           <Icon className="fas fa-microphone"></Icon>
