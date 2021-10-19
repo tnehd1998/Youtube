@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   HeaderContainer,
   CategoryContainer,
@@ -17,17 +18,14 @@ const Header = () => {
 
   const inputRef = useRef();
 
+  const history = useHistory();
+
   const handleSearch = () => {
     const value = inputRef.current.value;
-    console.log("Value: " + value);
-    console.log("Before: " + searchInput);
     setSearchInput(value);
-    console.log("After: " + searchInput);
   };
 
-  const onClick = () => {
-    handleSearch();
-  };
+  const onClick = () => handleSearch();
 
   const onKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -35,7 +33,9 @@ const Header = () => {
     }
   };
 
-  // useState Sync하게 바꿔야함
+  useEffect(() => {
+    history.push(`/search/${searchInput}`);
+  }, [searchInput, history]);
 
   return (
     <HeaderContainer>
