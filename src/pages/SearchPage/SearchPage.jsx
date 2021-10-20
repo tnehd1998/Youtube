@@ -4,7 +4,7 @@ import SideMenu from "../../components/SideMenu/SideMenu";
 import VideoList from "../../components/VideoList/VideoList";
 import Youtube from "../../service/youtube";
 
-const youtube = new Youtube("AIzaSyCROyCIRNZU-ro57TqRxodwkFOns7BIhK8");
+const youtube = new Youtube("AIzaSyDjgJ5Copq4Iaslil98TRkFOaCijXHDONM");
 
 const SearchPageContainer = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const SearchPage = ({ match }) => {
 
   useEffect(() => {
     youtube
-      .search(searchItem) //
+      .search(searchItem, 24) //
       .then((videos) => setSearchVideos(videos));
   }, [searchItem]);
 

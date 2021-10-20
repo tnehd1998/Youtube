@@ -5,7 +5,7 @@ import Youtube from "../../service/youtube";
 
 import { MainPageContainer } from "./MainPage.styles";
 
-const youtube = new Youtube("AIzaSyCROyCIRNZU-ro57TqRxodwkFOns7BIhK8");
+const youtube = new Youtube("AIzaSyDjgJ5Copq4Iaslil98TRkFOaCijXHDONM");
 
 const MainPage = () => {
   const [videos, setVideos] = useState([]);

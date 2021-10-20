@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const VideoItemContainer = styled.li`
+const VideoItemContainer = styled(Link)`
+  text-decoration: none;
+  color: black;
   margin-left: 1rem;
   border: 1px solid lightgray;
   box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
@@ -40,7 +43,7 @@ const VideoChannelName = styled.p`
 
 const VideoItem = ({ video, video: { snippet } }) => {
   return (
-    <VideoItemContainer>
+    <VideoItemContainer to={{ pathname: `/video/${video.id}`, state: video }}>
       <VideoItemImg src={snippet.thumbnails.medium.url} alt="" />
       <VideoDescriptionContainer>
         <VideoTitle>{snippet.title}</VideoTitle>
