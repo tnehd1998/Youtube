@@ -21,7 +21,7 @@ const MainPage = () => {
   return (
     <MainPageContainer>
       <SideMenu />
-      <VideoList videos={videos} />
+      <VideoList videos={videos} useType={"main"} />
     </MainPageContainer>
   );
 };

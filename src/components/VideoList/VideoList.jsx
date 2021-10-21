@@ -7,14 +7,14 @@ const VideoListContainer = styled.ul`
   list-style: none;
   justify-content: center;
   flex-wrap: wrap;
-  padding-top: 2vh;
-  padding-left: 12vw;
+  padding-top: 1.5rem;
+  padding-left: ${(props) => (props.useType === "main" ? "12vw" : "12rem")};
   background-color: #f9f9f9;
 `;
 
-const VideoList = ({ videos }) => {
+const VideoList = ({ videos, useType }) => {
   return (
-    <VideoListContainer>
+    <VideoListContainer useType={useType}>
       {videos.map((video) => (
         <VideoItem key={video.id} video={video} />
       ))}
