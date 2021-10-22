@@ -16,7 +16,7 @@ const VideoList = ({ videos, useType }) => {
   return (
     <VideoListContainer useType={useType}>
       {videos.map((video) => (
-        <VideoItem key={video.id} video={video} />
+        <VideoItem key={video.id} video={video} useType={useType} />
       ))}
     </VideoListContainer>
   );
