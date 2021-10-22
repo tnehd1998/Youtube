@@ -52,6 +52,60 @@ const DisplayingVideoIcon = styled.i`
   margin-right: 0.5rem;
 `;
 
+const ChannelInfoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+`;
+
+const ChannelInfoDescriptionContainer = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+`;
+
+const ChannelInfoLogo = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #787677;
+  margin-right: 0.5rem;
+`;
+
+const ChannelInfoDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ChannelInfoTitle = styled.p`
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+`;
+
+const ChannelInfoSubscriber = styled.p`
+  font-size: 0.5rem;
+  color: #787677;
+`;
+
+const ChannelInfoSubscribeButton = styled.div`
+  width: 70px;
+  height: 40px;
+  background-color: #cc0100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+`;
+
+const ChannelInfoSubscribeText = styled.p`
+  font-size: 0.8rem;
+  color: white;
+`;
+
 const NextVideoContainer = styled.div`
   width: 10vw;
 `;
@@ -107,6 +161,18 @@ const VideoDetail = ({ location }) => {
             </DisplayingVideoIconItem>
           </DisplayingVideoSideIconContainer>
         </DisplayingVideoInfo>
+        <ChannelInfoContainer>
+          <ChannelInfoDescriptionContainer>
+            <ChannelInfoLogo></ChannelInfoLogo>
+            <ChannelInfoDescription>
+              <ChannelInfoTitle>{state.snippet.channelTitle}</ChannelInfoTitle>
+              <ChannelInfoSubscriber>구독자 118만명</ChannelInfoSubscriber>
+            </ChannelInfoDescription>
+          </ChannelInfoDescriptionContainer>
+          <ChannelInfoSubscribeButton>
+            <ChannelInfoSubscribeText>구독</ChannelInfoSubscribeText>
+          </ChannelInfoSubscribeButton>
+        </ChannelInfoContainer>
       </DisplayingVideoContainer>
       <NextVideoContainer>
         <VideoList videos={sideVideos} useType={"side"} />
