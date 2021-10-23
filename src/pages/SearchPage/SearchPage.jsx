@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+
 import SideMenu from "../../components/SideMenu/SideMenu";
 import VideoList from "../../components/VideoList/VideoList";
 import Youtube from "../../service/youtube";
 
-const youtube = new Youtube("AIzaSyDjgJ5Copq4Iaslil98TRkFOaCijXHDONM");
+import { SearchPageContainer } from "./SearchPage.styles";
 
-const SearchPageContainer = styled.div`
-  display: flex;
-  padding-top: 6vh;
-`;
+const youtube = new Youtube("AIzaSyDjgJ5Copq4Iaslil98TRkFOaCijXHDONM");
 
 const SearchPage = ({ match }) => {
   const [searchVideos, setSearchVideos] = useState([]);
@@ -25,7 +22,7 @@ const SearchPage = ({ match }) => {
     <SearchPageContainer>
       <SideMenu />
       <h1>SearchPage</h1>
-      <VideoList videos={searchVideos} />
+      <VideoList videos={searchVideos} usetype={"main"} />
     </SearchPageContainer>
   );
 };

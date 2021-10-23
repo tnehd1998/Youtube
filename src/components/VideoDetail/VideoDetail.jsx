@@ -1,119 +1,34 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+
 import Youtube from "../../service/youtube";
 import VideoList from "../VideoList/VideoList";
 
+import {
+  VideoDetailContainer,
+  DisplayingVideoContainer,
+  DisplayingVideo,
+  DisplayingVideoTitle,
+  DisplayingVideoInfo,
+  DisplayingVideoViewAndDate,
+  DisplayingVideoSideIconContainer,
+  DisplayingVideoIconItem,
+  DisplayingVideoIcon,
+  ChannelInfoContainer,
+  ChannelInfoDescriptionContainer,
+  ChannelInfoLogo,
+  ChannelInfoDescription,
+  ChannelInfoTitle,
+  ChannelInfoSubscriber,
+  ChannelInfoSubscribeButton,
+  ChannelInfoSubscribeText,
+  NextVideoContainer,
+} from "./VideoDetail.styles";
+
 const youtube = new Youtube("AIzaSyDjgJ5Copq4Iaslil98TRkFOaCijXHDONM");
-
-const VideoDetailContainer = styled.div`
-  width: 100vw;
-  padding: 0 5vw;
-  display: flex;
-  background-color: #f9f9f9;
-`;
-
-const DisplayingVideoContainer = styled.div`
-  width: 67vw;
-  padding-top: 1.5rem;
-`;
-
-const DisplayingVideo = styled.iframe`
-  width: 67vw;
-  height: 74vh;
-`;
-
-const DisplayingVideoTitle = styled.p`
-  font-size: 1.2rem;
-  margin-top: 1.2rem;
-`;
-
-const DisplayingVideoInfo = styled.div`
-  padding: 1.2rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #e5e5e5;
-`;
-
-const DisplayingVideoViewAndDate = styled.p`
-  font-size: 0.8rem;
-  color: #787677;
-`;
-
-const DisplayingVideoSideIconContainer = styled.div`
-  display: flex;
-`;
-
-const DisplayingVideoIconItem = styled.p`
-  margin-left: 1.2rem;
-`;
-
-const DisplayingVideoIcon = styled.i`
-  margin-right: 0.5rem;
-`;
-
-const ChannelInfoContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-`;
-
-const ChannelInfoDescriptionContainer = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-`;
-
-const ChannelInfoLogo = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #787677;
-  margin-right: 0.5rem;
-`;
-
-const ChannelInfoDescription = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const ChannelInfoTitle = styled.p`
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-`;
-
-const ChannelInfoSubscriber = styled.p`
-  font-size: 0.5rem;
-  color: #787677;
-`;
-
-const ChannelInfoSubscribeButton = styled.div`
-  width: 70px;
-  height: 40px;
-  background-color: #cc0100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3px;
-  margin-right: 0.5rem;
-  cursor: pointer;
-`;
-
-const ChannelInfoSubscribeText = styled.p`
-  font-size: 0.8rem;
-  color: white;
-`;
-
-const NextVideoContainer = styled.div`
-  width: 10vw;
-`;
 
 const VideoDetail = ({ location }) => {
   const [sideVideos, setSideVideos] = useState([]);
   const { state } = location;
-  console.log(state);
   const searchItem = state.snippet.channelTitle;
 
   useEffect(() => {
@@ -175,7 +90,7 @@ const VideoDetail = ({ location }) => {
         </ChannelInfoContainer>
       </DisplayingVideoContainer>
       <NextVideoContainer>
-        <VideoList videos={sideVideos} useType={"side"} />
+        <VideoList videos={sideVideos} usetype={"side"} />
       </NextVideoContainer>
     </VideoDetailContainer>
   );

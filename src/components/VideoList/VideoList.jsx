@@ -1,22 +1,14 @@
 import React from "react";
+
 import VideoItem from "../VideoItem/VideoItem";
-import styled from "styled-components";
 
-const VideoListContainer = styled.ul`
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-top: 1.5rem;
-  padding-left: ${(props) => (props.useType === "main" ? "12vw" : "12rem")};
-  background-color: #f9f9f9;
-`;
+import { VideoListContainer } from "./VideoList.styles";
 
-const VideoList = ({ videos, useType }) => {
+const VideoList = ({ videos, usetype }) => {
   return (
-    <VideoListContainer useType={useType}>
+    <VideoListContainer usetype={usetype}>
       {videos.map((video) => (
-        <VideoItem key={video.id} video={video} useType={useType} />
+        <VideoItem key={video.id} video={video} usetype={usetype} />
       ))}
     </VideoListContainer>
   );

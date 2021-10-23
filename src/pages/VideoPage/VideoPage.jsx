@@ -1,11 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+
 import VideoDetail from "../../components/VideoDetail/VideoDetail";
 
-const VideoPageContainer = styled.div`
-  display: flex;
-  padding-top: 6vh;
-`;
+import { VideoPageContainer } from "./VideoPage.styles";
 
 const VideoPage = ({ location }) => {
   return (
