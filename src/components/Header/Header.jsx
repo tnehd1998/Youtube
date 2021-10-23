@@ -12,6 +12,7 @@ import {
   MicIconContainer,
   SideMenuContainer,
 } from "./Header.styles";
+import YoutubeLogo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -42,7 +43,7 @@ const Header = () => {
       <CategoryContainer>
         <Icon className="fas fa-bars"></Icon>
         <LogoContainer to="/">
-          <LogoImage src="/images/logo.png" alt="Youtube Logo" />
+          <LogoImage src={YoutubeLogo} alt="Youtube Logo" />
           <LogoTitle>YouTube</LogoTitle>
         </LogoContainer>
       </CategoryContainer>
