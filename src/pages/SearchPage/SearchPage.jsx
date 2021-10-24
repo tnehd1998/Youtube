@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 import SideMenu from "../../components/SideMenu/SideMenu";
 import VideoList from "../../components/VideoList/VideoList";
@@ -20,8 +21,10 @@ const SearchPage = ({ match }) => {
 
   return (
     <SearchPageContainer>
+      <Helmet>
+        <title>{searchItem} - YouTube</title>
+      </Helmet>
       <SideMenu />
-      <h1>SearchPage</h1>
       <VideoList videos={searchVideos} usetype={"main"} />
     </SearchPageContainer>
   );
