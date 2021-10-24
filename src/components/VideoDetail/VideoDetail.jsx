@@ -43,8 +43,9 @@ const VideoDetail = ({ location }) => {
         <DisplayingVideo
           type="text/html"
           title={`${state.snippet.title}`}
-          src={`https://www.youtube.com/embed/${state.id}`}
+          src={`https://www.youtube.com/embed/${state.id}?autoplay=1`}
           frameBorder="0"
+          allow="autoplay"
           allowFullScreen
         ></DisplayingVideo>
         <DisplayingVideoTitle>{state.snippet.title}</DisplayingVideoTitle>
